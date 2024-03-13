@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Blog = ({ blog }) => {
   console.log(blog);
   return (
@@ -8,3 +10,7 @@ const Blog = ({ blog }) => {
 };
 
 export default Blog;
+
+Blog.propTypes = {
+  blog: PropTypes.object.isRequired,
+};
