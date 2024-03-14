@@ -22,7 +22,7 @@ function App() {
       <main className="container mx-auto px-4 mt-8">
         <div className="md:flex gap-6">
           <Blogs handleReadingTime={handleReadingTime} handleAddToBookmark={handleAddToBookmark} />
-          <Bookmarks bookmarks={bookmarks} />
+          <Bookmarks bookmarks={bookmarks} readingTime={readingTime} />
         </div>
       </main>
     </>
