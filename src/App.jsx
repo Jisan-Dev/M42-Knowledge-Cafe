@@ -8,14 +8,13 @@ function App() {
   const [readingTime, setReadingTime] = useState(0);
 
   const handleAddToBookmark = (blog) => {
-    if (bookmarks.length) {
-      bookmarks.forEach((bookmark) => {
-        if (bookmark.id !== blog.id) {
-          setBookmarks([...bookmarks, blog]);
-        }
-      });
-    } else {
+    const isBookmarked = bookmarks.some((item) => item.id === blog.id);
+
+    if (!isBookmarked) {
+      blog.isBookmarked = true;
       setBookmarks([...bookmarks, blog]);
+    } else {
+      alert('Already Bookmarked');
     }
   };
 
