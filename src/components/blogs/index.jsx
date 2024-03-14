@@ -12,10 +12,12 @@ const Blogs = ({ handleAddToBookmark }) => {
 
   return (
     <div className="md:w-2/3 font-exo">
-      <h2>Blogs: {blogs.length} </h2>
-      {blogs.map((blog) => (
-        <Blog handleAddToBookmark={handleAddToBookmark} key={blog.id} blog={blog} />
-      ))}
+      <span className="text-neutral-900 text-lg font-semibold bg-neutral-900 bg-opacity-5 p-4 rounded-lg">Blogs: {blogs.length} </span>
+      <div className="mt-4">
+        {blogs.map((blog) => (
+          <Blog handleAddToBookmark={handleAddToBookmark} key={blog.id} blog={blog} />
+        ))}
+      </div>
     </div>
   );
 };
