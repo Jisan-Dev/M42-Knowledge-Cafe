@@ -8,7 +8,15 @@ function App() {
   const [readingTime, setReadingTime] = useState(0);
 
   const handleAddToBookmark = (blog) => {
-    setBookmarks([...bookmarks, blog]);
+    if (bookmarks.length) {
+      bookmarks.forEach((bookmark) => {
+        if (bookmark.id !== blog.id) {
+          setBookmarks([...bookmarks, blog]);
+        }
+      });
+    } else {
+      setBookmarks([...bookmarks, blog]);
+    }
   };
 
   const handleReadingTime = (time) => {
