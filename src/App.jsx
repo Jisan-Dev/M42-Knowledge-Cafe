@@ -6,8 +6,8 @@ function App() {
   return (
     <>
       <Header />
-      <main className="container mx-auto">
-        <div className="md:flex">
+      <main className="container mx-auto px-4">
+        <div className="md:flex gap-6">
           <Blogs />
           <Bookmarks />
         </div>
