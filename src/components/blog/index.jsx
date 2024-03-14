@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import bookmark from '../../assets/images/bookmark.png';
 
-const Blog = ({ blog, handleAddToBookmark }) => {
+const Blog = ({ blog, handleAddToBookmark, handleReadingTime }) => {
   const { title, cover, author_img, author, posted_date, reading_time, hashtags } = blog;
   return (
     <div className="border-b pb-9 mb-10">
@@ -27,6 +27,11 @@ const Blog = ({ blog, handleAddToBookmark }) => {
           <a href="#">#{tag}</a>
         </span>
       ))}
+      <div>
+        <button onClick={() => handleReadingTime(reading_time)} className="mt-4 text-indigo-600 text-xl font-semibold underline">
+          Mark as read
+        </button>
+      </div>
     </div>
   );
 };
@@ -36,4 +41,5 @@ export default Blog;
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
   handleAddToBookmark: PropTypes.func.isRequired,
+  handleReadingTime: PropTypes.func.isRequired,
 };
