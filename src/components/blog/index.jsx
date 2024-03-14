@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import bookmark from '../../assets/images/bookmark.png';
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmark }) => {
   const { title, cover, author_img, author, posted_date, reading_time, hashtags } = blog;
   return (
     <div className="border-b pb-9 mb-10">
@@ -16,7 +16,7 @@ const Blog = ({ blog }) => {
         </div>
         <div className="flex items-center gap-2">
           <p className="text-neutral-900 text-opacity-60 text-xl font-medium">{reading_time} min read</p>
-          <button>
+          <button onClick={() => handleAddToBookmark(blog)}>
             <img src={bookmark} alt="bookmark icon" />
           </button>
         </div>
@@ -35,4 +35,5 @@ export default Blog;
 
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
+  handleAddToBookmark: PropTypes.func.isRequired,
 };
